@@ -2,11 +2,11 @@
 #include <string.h>
 
 int main () {
-    char arr[7]; // Increased to 7 to safely hold 5 digits, \n, and the null terminator \0
+    char arr[7]; 
     printf("Enter up to 5 digits (e.g., 12345): ");
     fgets(arr, sizeof(arr), stdin);
     
-    // Remove the trailing newline character if it exists
+
     arr[strcspn(arr, "\n")] = '\0'; 
     
     int len = strlen(arr);
@@ -22,7 +22,7 @@ int main () {
     }
     
     printf("Result indices or pairs: ");
-    // Two-sum logic loop execution
+
     for (int i = 0; i < len; i++) {
         for (int j = i + 1; j < len; j++) {
             if (sums[i] + sums[j] == target) {
